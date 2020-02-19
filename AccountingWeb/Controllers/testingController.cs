@@ -16,12 +16,13 @@ namespace AccountingWeb.Controllers
         }
 
         [HttpPost]
-        public ActionResult Result(string year, string month)
+        public ActionResult Result(string year, string month, string budget)
         {
 
             ViewBag.Message = "Your result page.";
             ViewBag.Month = month;
             ViewBag.Year = year;
+            ViewBag.Budget = budget;
 
             return View();
         }
