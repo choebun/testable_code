@@ -11,6 +11,18 @@ namespace AccountingWeb.Controllers
         // GET: testing
         public ActionResult testing()
         {
+            ViewBag.Message = "Your application description page.";
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Result(string year, string month)
+        {
+
+            ViewBag.Message = "Your result page.";
+            ViewBag.Month = month;
+            ViewBag.Year = year;
+
             return View();
         }
     }

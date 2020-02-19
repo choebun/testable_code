@@ -200,6 +200,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\budget\create.cshtml" />
     <Content Include="Views\testing\testing.cshtml" />
+    <Content Include="Views\testing\Result.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
