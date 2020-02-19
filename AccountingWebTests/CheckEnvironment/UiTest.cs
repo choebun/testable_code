@@ -46,18 +46,13 @@ namespace AccountingWebTests.CheckEnvironment
         }
 
         [Test]
-        public void go_to_joey_blog()
-        {
-            Go.ToUrl("https://dotblogs.com.tw/hatelove/1");
-        }
-<<<<<<< HEAD
-        [Test]
         public void can_web_open()
         {
             //Go.ToUrl("http://localhost:50564/testing/testing");
-            Go.To<BudgetPage>();
+            Go.To<BudgetPage>().
+            Year.Set("2020").
+            Month.Set("02").
+            Submit.Click();
         }
-=======
->>>>>>> parent of 793c326... jerry added
     }
 }
