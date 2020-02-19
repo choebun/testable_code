@@ -50,11 +50,14 @@ namespace AccountingWebTests.CheckEnvironment
         {
             Go.ToUrl("https://dotblogs.com.tw/hatelove/1");
         }
+<<<<<<< HEAD
         [Test]
         public void can_web_open()
         {
             //Go.ToUrl("http://localhost:50564/testing/testing");
             Go.To<BudgetPage>();
         }
+=======
+>>>>>>> parent of 793c326... jerry added
     }
 }
