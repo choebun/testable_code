@@ -19,17 +19,26 @@ namespace AccountingWeb.Controllers
         [HttpPost]
         public ActionResult Result(string year, string month, string budget)
         {
+            using (var dbContext = new AccountingEntitiesProd())
+            {
+                var budgetObj = dbContext.Budgets.Find(year + month);
 
-            ViewBag.Message = "Your result page.";
+                if (budgetObj == null)
+                {
+                    dbContext.Budgets.Add(new Budget() { Amount = System.Convert.ToDecimal(budget), YearMonth = year + month });
+                    ViewBag.Message = "Add new budget success";
+                }
+                else
+                {
+                    budgetObj.Amount = System.Convert.ToDecimal(budget);
+                    ViewBag.Message = "Update budget success";
+                }
+                dbContext.SaveChanges();
+            }
+
             ViewBag.Month = month;
             ViewBag.Year = year;
             ViewBag.Budget = budget;
-
-            using (var dbContext = new AccountingEntitiesProd())
-            {
-                dbContext.Budgets.Add(new Budget() { Amount = System.Convert.ToDecimal(budget), YearMonth = year + month });
-                dbContext.SaveChanges();
-            }
 
             return View();
         }
