@@ -117,7 +117,6 @@
   <ItemGroup>
     <Compile Include="CheckEnvironment\CheckSpecflowSteps.cs" />
     <Compile Include="CheckEnvironment\OrmTests.cs" />
-    <Compile Include="CheckEnvironment\UITesting.cs" />
     <Compile Include="CheckEnvironment\UiTest.cs" />
     <Compile Include="DataModels\AccountingDataModel.Context.cs">
       <AutoGen>True</AutoGen>
