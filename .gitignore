@@ -7,6 +7,8 @@
 *.userosscache
 *.sln.docstates
 
+.AccountingWeb/AccountingWeb.csproj
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
