@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AccountingWeb.DataModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +24,12 @@ namespace AccountingWeb.Controllers
             ViewBag.Month = month;
             ViewBag.Year = year;
             ViewBag.Budget = budget;
+
+            using (var dbContext = new AccountingEntitiesProd())
+            {
+                dbContext.Budgets.Add(new Budget() { Amount = System.Convert.ToDecimal(budget), YearMonth = year + month });
+                dbContext.SaveChanges();
+            }
 
             return View();
         }
